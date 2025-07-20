@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/events';
+const API_URL = 'https://mini-event-scheduler-server.vercel.app';
 
 // for fetch all function
 export const fetchEvents = async (): Promise<Event[]> => {
