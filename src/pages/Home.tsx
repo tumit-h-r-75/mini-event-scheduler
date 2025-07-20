@@ -35,7 +35,7 @@ const Home = () => {
                 <Navbar></Navbar>
             </header>
             <div className="min-h-screen bg-gray-900 p-4">
-                <div className='mt-16'>
+                <div className='mt-1'>
                     <EventForm onAddEvent={handleAddEvent} />
                 </div>
                 <EventList
