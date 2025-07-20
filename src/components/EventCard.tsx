@@ -1,5 +1,5 @@
-import React from 'react';
-import type { Event } from '../types/Event';
+import React from "react";
+import type { Event } from "../types/Event";
 
 interface EventCardProps {
   event: Event;
@@ -7,7 +7,11 @@ interface EventCardProps {
   onToggleArchive: (id: string) => void;
 }
 
-const EventCard: React.FC<EventCardProps> = ({ event, onDelete, onToggleArchive }) => {
+const EventCard: React.FC<EventCardProps> = ({
+  event,
+  onDelete,
+  onToggleArchive,
+}) => {
   return (
     <div className="bg-gray-900 rounded-lg shadow-md p-5 mb-4 text-white border border-lime-600 hover:border-lime-400 transition">
       <div className="flex justify-between items-start">
@@ -16,10 +20,12 @@ const EventCard: React.FC<EventCardProps> = ({ event, onDelete, onToggleArchive 
           <button
             onClick={() => onToggleArchive(event.id)}
             className={`px-3 py-1 rounded text-sm font-medium ${
-              event.archived ? 'bg-lime-600 hover:bg-lime-700' : 'bg-gray-700 hover:bg-gray-600'
+              event.archived
+                ? "bg-lime-600 hover:bg-lime-700"
+                : "bg-gray-700 hover:bg-gray-600"
             } transition`}
           >
-            {event.archived ? 'Unarchive' : 'Archive'}
+            {event.archived ? "Unarchive" : "Archive"}
           </button>
           <button
             onClick={() => onDelete(event.id)}

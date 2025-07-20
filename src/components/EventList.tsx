@@ -1,6 +1,6 @@
-import React from 'react';
-import EventCard from './EventCard';
-import type { Event } from '../types/Event';
+import React from "react";
+import EventCard from "./EventCard";
+import type { Event } from "../types/Event";
 
 interface EventListProps {
   events: Event[];
@@ -8,9 +8,17 @@ interface EventListProps {
   onToggleArchive: (id: string) => void;
 }
 
-const EventList: React.FC<EventListProps> = ({ events, onDelete, onToggleArchive }) => {
+const EventList: React.FC<EventListProps> = ({
+  events,
+  onDelete,
+  onToggleArchive,
+}) => {
   if (events.length === 0) {
-    return <p className="text-lime-400 mt-10 text-center">No events yet. Please add some!</p>;
+    return (
+      <p className="text-lime-400 mt-10 text-center">
+        No events yet. Please add some!
+      </p>
+    );
   }
 
   return (
@@ -21,7 +29,7 @@ const EventList: React.FC<EventListProps> = ({ events, onDelete, onToggleArchive
           const dateB = new Date(`${b.date}T${b.time}`);
           return dateA.getTime() - dateB.getTime();
         })
-        .map(event => (
+        .map((event) => (
           <EventCard
             key={event.id}
             event={event}
