@@ -1,69 +1,110 @@
-# React + TypeScript + Vite
+# 🗓️ Mini Event Scheduler
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack Mini Event Scheduler app built as part of a Full-Stack Engineering Intern task. It allows users to view categorized events, book schedules, and manage event plans. Built using React, Node.js, Express, TypeScript, and TailwindCSS.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔗 Live Links
 
-## Expanding the ESLint configuration
+- 🔹 Client: [https://mini-event-tumit.web.app](https://mini-event-tumit.web.app)
+- 🔸 Server: [https://mini-event-scheduler-server.vercel.app](https://mini-event-scheduler-server.vercel.app)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- 🔍 View all upcoming events
+- 📚 Categorized event view
+- 🗂️ Create and organize events
+- ⏰ Countdown timer or duration system
+- 🎨 Responsive & modern UI with TailwindCSS
+- 🔐 Secure API calls using Axios
+- 🌐 Deployed on Firebase (client) & Vercel (server)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Frontend:
+- React
+- TypeScript
+- Tailwind CSS
+- DaisyUI
+- Axios
+- React Router
+- Framer Motion (for animations)
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Backend:
+- Node.js
+- Express
+- TypeScript
+- CORS & JSON Middleware
+
+---
+
+## ⚙️ Setup Instructions
+
+### 🔧 Clone the Repository
+
+```bash
+git clone https://github.com/your-username/mini-event-scheduler.git
+cd mini-event-scheduler
+🖥️ Client Setup
+bash
+Copy
+Edit
+cd client
+npm install
+npm run dev
+Runs on: http://localhost:5173
+
+🌐 Server Setup
+bash
+Copy
+Edit
+cd server
+npm install
+npm run dev
+Runs on: http://localhost:5000
+
+📁 Folder Structure
+bash
+Copy
+Edit
+mini-event-scheduler/
+├── client/              # React Frontend
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   └── services/    # Axios API calls
+├── server/              # Express Backend
+│   ├── index.ts         # Main server file
+│   └── data/events.json # Sample events data
+📸 Screenshots
+Home Page	Category View
+
+📄 License
+This project is licensed under the MIT License.
+
+🤝 Acknowledgements
+Thanks to Liberate Labs & Programming Hero for the task instructions and internship opportunity.
+
+📬 Contact
+Tumit Hasan
+📧 tumit.dev@gmail.com
+🌐 tumit.vercel.app
+
+yaml
+Copy
+Edit
+
+---
+
+### ✅ Next Steps
+
+- Replace `https://github.com/your-username/mini-event-scheduler.git` with your actual GitHub repo.
+- Add actual screenshots inside a `screenshots/` folder and update the image links.
+- Push this `README.md` to your root GitHub repo.
+
+Let me know if you'd like a Bangla version or a polished one with badges and markdown flair.
+
