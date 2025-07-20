@@ -1,6 +1,6 @@
 import React from 'react';
-import { Event } from '../types/Event';
 import EventCard from './EventCard';
+import type { Event } from '../types/Event';
 
 interface EventListProps {
   events: Event[];
@@ -10,7 +10,7 @@ interface EventListProps {
 
 const EventList: React.FC<EventListProps> = ({ events, onDelete, onToggleArchive }) => {
   if (events.length === 0) {
-    return <p className="text-lime-400 mt-4">No events yet. Please add some!</p>;
+    return <p className="text-lime-400 mt-10 text-center">No events yet. Please add some!</p>;
   }
 
   return (

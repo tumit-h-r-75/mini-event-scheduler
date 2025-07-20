@@ -1,5 +1,5 @@
 import React from 'react';
-import { Event } from '../types/Event';
+import type { Event } from '../types/Event';
 
 interface EventCardProps {
   event: Event;
@@ -43,7 +43,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, onDelete, onToggleArchive 
         </p>
       )}
 
-      <p className="mt-2 text-lime-400 font-semibold">
+      <p className="mt-2 text-lime-400 font-semibold ">
         Category: <span className="capitalize">{event.category}</span>
       </p>
     </div>

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import EventForm from '../components/EventForm';
 import EventList from '../components/EventList';
-import { Event } from '../types/Event';
+import type { Event } from '../types/Event';
 
 const Home = () => {
   const [events, setEvents] = useState<Event[]>([]);
