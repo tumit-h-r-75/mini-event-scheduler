@@ -12,6 +12,9 @@ const EventForm: React.FC<EventFormProps> = ({ onAddEvent }) => {
   const [notes, setNotes] = useState('');
   const [error, setError] = useState('');
 
+  
+  const category = 'Other';
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -35,7 +38,7 @@ const EventForm: React.FC<EventFormProps> = ({ onAddEvent }) => {
       date,
       time,
       notes: notes.trim() ? notes : undefined,
-      category: 'Other',
+      category,
       archived: false,
     });
 
@@ -48,15 +51,16 @@ const EventForm: React.FC<EventFormProps> = ({ onAddEvent }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-xl mx-auto bg-gray-900 text-white rounded-2xl shadow-xl p-8 space-y-6 border border-lime-600"
+      className="w-full max-w-2xl mx-auto bg-gray-800 text-white rounded-2xl shadow-xl p-6 sm:p-8 space-y-6 hover:shadow-lime-600 transition duration-300"
     >
       <h2 className="text-3xl font-bold text-lime-400 text-center">Create a New Event</h2>
 
       {error && <p className="text-red-500 text-center font-medium">{error}</p>}
 
       <div className="space-y-4">
+        {/* Title */}
         <div>
-          <label htmlFor="title" className="block mb-1 text-lime-300 font-semibold">
+          <label htmlFor="title" className="block mb-3 text-lime-300 font-semibold">
             Title <span className="text-red-500">*</span>
           </label>
           <input
@@ -65,13 +69,14 @@ const EventForm: React.FC<EventFormProps> = ({ onAddEvent }) => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Enter event title"
-            className="w-full px-4 py-2 rounded-md bg-gray-800 border border-lime-500 placeholder-lime-400 text-white focus:outline-none focus:ring-2 focus:ring-lime-400"
+            className="w-full px-4 py-2 rounded-md bg-gray-800 border border-lime-500 placeholder:text-gray-300 text-white focus:outline-none focus:ring-2 focus:ring-lime-400"
           />
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        {/* Date & Time */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="date" className="block mb-1 text-lime-300 font-semibold">
+            <label htmlFor="date" className="block mb-3 text-lime-300 font-semibold">
               Date <span className="text-red-500">*</span>
             </label>
             <input
@@ -79,12 +84,12 @@ const EventForm: React.FC<EventFormProps> = ({ onAddEvent }) => {
               type="date"
               value={date}
               onChange={(e) => setDate(e.target.value)}
-              className="w-full px-4 py-2 rounded-md bg-gray-800 border border-lime-500 text-white focus:outline-none focus:ring-2 focus:ring-lime-400"
+              className="w-full px-4 py-2 rounded-md bg-gray-800 border border-lime-500 text-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-400"
             />
           </div>
 
           <div>
-            <label htmlFor="time" className="block mb-1 text-lime-300 font-semibold">
+            <label htmlFor="time" className="block mb-3 text-lime-300 font-semibold">
               Time <span className="text-red-500">*</span>
             </label>
             <input
@@ -92,13 +97,14 @@ const EventForm: React.FC<EventFormProps> = ({ onAddEvent }) => {
               type="time"
               value={time}
               onChange={(e) => setTime(e.target.value)}
-              className="w-full px-4 py-2 rounded-md bg-gray-800 border border-lime-500 text-white focus:outline-none focus:ring-2 focus:ring-lime-400"
+              className="w-full px-4 py-2 rounded-md bg-gray-800 border border-lime-500 text-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-400"
             />
           </div>
         </div>
 
+        {/* Notes */}
         <div>
-          <label htmlFor="notes" className="block mb-1 text-lime-300 font-semibold">
+          <label htmlFor="notes" className="block mb-2 text-lime-300 font-semibold">
             Notes
           </label>
           <textarea
@@ -107,8 +113,18 @@ const EventForm: React.FC<EventFormProps> = ({ onAddEvent }) => {
             onChange={(e) => setNotes(e.target.value)}
             placeholder="Optional notes..."
             rows={3}
-            className="w-full px-4 py-2 rounded-md bg-gray-800 border border-lime-500 placeholder-lime-400 text-white resize-none focus:outline-none focus:ring-2 focus:ring-lime-400"
+            className="w-full px-4 py-2 rounded-md bg-gray-800 border border-lime-500 placeholder-gray-300 text-white resize-none focus:outline-none focus:ring-2 focus:ring-lime-400"
           />
+        </div>
+
+        {/* Category (display only) */}
+        <div>
+          <label className="block mb-2 text-lime-300 font-semibold">
+            Category (from backend)
+          </label>
+          <div className="w-full px-4 py-2 rounded-md bg-gray-800 border border-lime-500 text-white">
+            {category}
+          </div>
         </div>
       </div>
 

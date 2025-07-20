@@ -30,7 +30,9 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gray-900 p-4">
-      <EventForm onAddEvent={handleAddEvent} />
+      <div className='mt-16'>
+        <EventForm onAddEvent={handleAddEvent} />
+      </div>
       <EventList
         events={events}
         onDelete={handleDelete}
